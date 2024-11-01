@@ -36,9 +36,9 @@ export default function RootLayout({
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path d="M12 13V2l8 4-8 4" />
                   <path d="M20.561 10.222a9 9 0 1 1-12.55-5.29" />
@@ -55,9 +55,9 @@ export default function RootLayout({
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <circle cx="12" cy="12" r="10" />
                       <circle cx="12" cy="12" r="6" />
@@ -74,9 +74,9 @@ export default function RootLayout({
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path d="M21.801 10A10 10 0 1 1 17 3.335" />
                       <path d="m9 11 3 3L22 4" />
@@ -92,9 +92,9 @@ export default function RootLayout({
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path d="M3 6h18" />
                       <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
@@ -112,9 +112,9 @@ export default function RootLayout({
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 16v-4" />

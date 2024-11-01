@@ -1,0 +1,10 @@
+{
+    id:"28372837283",
+    title:"task 1",
+    description: "this task about this work",
+    tag: 2,4,5,6,7,8
+    date: 12/09/2024
+    task_stast: current date
+    due_date: choose date
+    status: 1(progress) , 2(compelete) , 3(deleted)
+}

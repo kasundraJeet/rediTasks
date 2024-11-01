@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js",
+    "dev": "pnpm run start --turbo"
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20"
+  }
+}
