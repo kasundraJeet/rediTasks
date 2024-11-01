@@ -47,7 +47,7 @@ export default function RootLayout({
               </Link>
               <ul>
                 <li>
-                  <Link href="#" className="menu-btn">
+                  <Link href="/today-task" className="menu-btn">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -66,7 +66,7 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="menu-btn">
+                  <Link href="/completed-task" className="menu-btn">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="22"
@@ -84,7 +84,7 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="menu-btn">
+                  <Link href="/deleted-task" className="menu-btn">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="22"
@@ -123,10 +123,8 @@ export default function RootLayout({
             </button>
           </aside>
           <section className="main-container">
-            <div className="container">
-            {children}
-            </div>
-            </section>
+            <div className="container">{children}</div>
+          </section>
         </main>
       </body>
     </html>
