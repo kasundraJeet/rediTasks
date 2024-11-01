@@ -1,19 +1,16 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #d1e9f6;
+  --foreground: #000;
+  --color_1: #f6eacb;
+  --color_2: #f1d3ce;
+  --color_3: #eecad5;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: var(--font-geist-mono);
 }
 
 body {
@@ -32,8 +29,189 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.layout-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  height: 100dvh;
+}
+
+.side-menu {
+  border: 1px solid var(--foreground);
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  max-width: 64px;
+  width: 100%;
+  padding: 12px;
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color_2);
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.side-menu div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-btn {
+  border: 1px solid var(--foreground);
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  background-color: var(--color_3);
+  cursor: pointer;
+}
+
+.logo {
+  min-width: 40px;
+  max-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  cursor: pointer;
+}
+
+.main-container {
+  overflow-y: auto;
+  width: 100%;
+  padding: 12px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+.task-box {
+  width: 100%;
+  border: 1px solid var(--foreground);
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  max-width: 890px;
+  overflow: hidden;
+  background-color: var(--color_2);
+}
+
+.task-box .box-part {
+  padding: 14px;
+}
+
+.task-box h1 {
+  font-family: var(--font-geist-sans);
+  font-weight: 500;
+  font-size: 32px;
+  display: block;
+  width: 100%;
+}
+
+.task-box .header {
+  border-bottom: 1px solid var(--foreground);
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  border: 1px solid var(--foreground);
+  padding: 12px;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--color_1);
+}
+
+.task-list li .btn-group {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.task-list li .btn-group button {
+  border: 1px solid var(--foreground);
+  min-width: 34px;
+  max-width: 34px;
+  min-height: 34px;
+  max-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-color: var(--color_3);
+  cursor: pointer;
+}
+
+.task-list li h4 {
+  font-family: var(--font-geist-sans);
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.task-list li .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.task-list li .tag-list li {
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 999px;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -ms-border-radius: 999px;
+  -o-border-radius: 999px;
+  background-color: var(--color_2);
+  line-height: 0;
 }
