@@ -7,7 +7,7 @@ export default function TodayTask() {
         <h1>Today Tasks</h1>
       </div>
       <div className="box-part">
-        <TaskList />
+      <TaskList taskList={[]} />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export default function DeletedList() {
         <h1>Deleted Tasks</h1>
       </div>
       <div className="box-part">
-        <TaskList />
+        <TaskList taskList={[]} />
       </div>
     </div>
   );

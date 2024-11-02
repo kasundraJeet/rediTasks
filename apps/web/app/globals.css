@@ -215,3 +215,12 @@ a {
   background-color: var(--color_2);
   line-height: 0;
 }
+
+.empty-list {
+  padding: 24px;
+  text-align: center;
+}
+
+.empty-list p {
+  margin-top: 8px;
+}

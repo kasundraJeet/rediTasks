@@ -13,6 +13,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/page.jsx", "utils/apiFetcher.js", "app/layout.jsx"  ],
   "exclude": ["node_modules"]
 }

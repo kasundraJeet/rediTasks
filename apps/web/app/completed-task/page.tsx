@@ -7,7 +7,7 @@ export default function CompletedTasks() {
         <h1>Completed Tasks</h1>
       </div>
       <div className="box-part">
-        <TaskList />
+      <TaskList taskList={[]} />
       </div>
     </div>
   );
