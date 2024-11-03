@@ -24,7 +24,7 @@ app.use(cors());
 app.use("/", taskRouter);
 
 app.use((req, res, next) => {
-  logger.error("Route not found", error);
+  logger.error("Route not found", "Route not found");
   res.status(404).json({ error: "Route not found" });
 });
 

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema({
   title: {
@@ -14,10 +14,15 @@ const taskSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  isCompleted: {
-    type: Boolean,
-    default: false,
+  status: {
+    type: String,
+    enum: ["0", "1", "2"],
+    default: "0",
+  },
+  tags: {
+    type: [String],
+    default: [],
   },
 });
 
-module.exports = mongoose.model('Task', taskSchema);
+module.exports = mongoose.model("Task", taskSchema);
