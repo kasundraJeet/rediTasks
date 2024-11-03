@@ -230,21 +230,21 @@ exports.createTask = async (req, res) => {
 
 exports.getTasks = async (req, res) => {
   try {
-    let tasks;
     const { status, date } = req.query;
+    let filter = {};
 
     if (status) {
-
-      tasks = tasksList.filter((task) => task.status == status);
-    } else if (date) {
-
-      const targetDate = new Date(date).toISOString().split("T")[0];
-      tasks = tasksList.filter(
-        (task) => task.startDate.toISOString().split("T")[0] == targetDate
-      );
-    } else {
-      tasks = tasksList;
+      filter.status = status;
     }
+    if (date) {
+      const targetDate = new Date(date).toISOString().split("T")[0];
+      filter.startDate = {
+        $gte: new Date(targetDate),
+        $lt: new Date(new Date(targetDate).setDate(new Date(targetDate).getDate() + 1))
+      };
+    }
+
+    const tasks = await Task.find(filter);
 
     successResponseWithData(res, "Tasks retrieved successfully", tasks);
   } catch (error) {
@@ -252,6 +252,7 @@ exports.getTasks = async (req, res) => {
     errorResponse(res, "Failed to retrieve tasks");
   }
 };
+
 
 exports.updateTask = async (req, res) => {
   try {

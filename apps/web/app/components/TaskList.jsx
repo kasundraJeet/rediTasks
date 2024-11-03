@@ -1,13 +1,26 @@
-type Task = {
-  title: string;
-  tags: string[];
-};
+import React, { useState } from "react";
+import { del } from "../../utils/apiFetcher";
 
-interface TaskListProps {
-  taskList: Task[];
-}
+export default function TaskList({ taskList, upDateList }) {
+  const [loader, setLoader] = useState(false);
 
-export default function TaskList({ taskList }: TaskListProps) {
+  async function handleDelete(id) {
+    setLoader(true);
+    try {
+      const data = await del(`http://localhost:2000/tasks/${id}`);
+      if (data.success == 1) {
+        setLoader(false);
+        upDateList();
+      } else {
+        setLoader(false);
+      }
+    } catch (err) {
+      console.error("Failed to load tasks", err);
+    } finally {
+      setLoader(false);
+    }
+  }
+
   return (
     <>
       {taskList && taskList.length > 0 ? (
@@ -23,7 +36,7 @@ export default function TaskList({ taskList }: TaskListProps) {
                 </ul>
               </div>
               <div className="btn-group">
-                <button>
+                <button disabled={loader}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -39,7 +52,7 @@ export default function TaskList({ taskList }: TaskListProps) {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </button>
-                <button>
+                <button disabled={loader}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -57,7 +70,10 @@ export default function TaskList({ taskList }: TaskListProps) {
                     <path d="M8 16H3v5" />
                   </svg>
                 </button>
-                <button>
+                <button
+                  disabled={loader}
+                  onClick={() => handleDelete(task._id)}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"

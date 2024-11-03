@@ -6,20 +6,18 @@ import { get } from "../../utils/apiFetcher";
 export default function DeletedList() {
   const [tasks, setTasks] = useState([]);
 
+  const fetchTasks = async () => {
+    try {
+      const today = new Date().toISOString().split("T")[0];
+
+      const response = await get(`http://localhost:2000/tasks/?date=${today}`);
+      setTasks(response.data);
+    } catch (err) {
+      console.error("Failed to load tasks", err);
+    }
+  };
+
   useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        const today = new Date().toISOString().split("T")[0];
-
-        const response = await get(
-          `http://localhost:2000/tasks/?date=${today}`
-        );
-        setTasks(response.data);
-      } catch (err) {
-        console.error("Failed to load tasks", err);
-      }
-    };
-
     fetchTasks();
   }, []);
 
@@ -29,7 +27,7 @@ export default function DeletedList() {
         <h1>Today Tasks</h1>
       </div>
       <div className="box-part">
-        <TaskList taskList={tasks} />
+        <TaskList taskList={tasks} upDateList={fetchTasks} />
       </div>
     </div>
   );

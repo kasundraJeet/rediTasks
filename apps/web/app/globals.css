@@ -211,6 +211,11 @@ a {
   cursor: pointer;
 }
 
+.task-list li .btn-group button:disabled{
+  opacity: 0.5;
+  cursor: no-drop;
+}
+
 .task-list li h4 {
   font-family: var(--font-geist-sans);
   font-weight: 500;
@@ -333,27 +338,27 @@ a {
   background-color: var(--color_3);
 }
 
-.from-group {
+.form-group {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 6px;
 }
 
-.from-grid {
+.form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
-.from-group label {
+.form-group label {
   font-size: 14px;
   font-family: var(--font-geist-sans);
   display: block;
   cursor: pointer;
 }
 
-.from-group .input {
+.form-group .input {
   width: 100%;
   border: 1px solid var(--foreground);
   background-color: var(--color_1);
@@ -366,7 +371,7 @@ a {
   font-family: 20px;
 }
 
-.from-group textarea {
+.form-group textarea {
   min-height: 140px;
   resize: none;
 }
