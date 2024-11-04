@@ -16,11 +16,3 @@ export async function get(url, config) {
 export async function post(url, data, config) {
   return apiFetcher(url, { ...config, method: "POST", data });
 }
-
-export async function put(url, data, config) {
-  return apiFetcher(url, { ...config, method: "PUT", data });
-}
-
-export async function del(url, config) {
-  return apiFetcher(url, { ...config, method: "DELETE" });
-}

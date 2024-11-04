@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { del } from "../../utils/apiFetcher";
+import { post } from "../../utils/apiFetcher";
 
 export default function TaskList({ taskList, upDateList }) {
   const [loader, setLoader] = useState(false);
 
-  async function handleDelete(id) {
+  async function handleStatus(id, status) {
     setLoader(true);
     try {
-      const data = await del(`http://localhost:2000/tasks/${id}`);
+      const data = await post(`http://localhost:2000/status-update/${id}`, {
+        status: status,
+      });
       if (data.success == 1) {
         setLoader(false);
         upDateList();
@@ -36,7 +38,7 @@ export default function TaskList({ taskList, upDateList }) {
                 </ul>
               </div>
               <div className="btn-group">
-                <button disabled={loader}>
+                <button disabled={loader} onClick={() => handleStatus(task._id, 2)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -52,7 +54,7 @@ export default function TaskList({ taskList, upDateList }) {
                     <path d="m9 11 3 3L22 4" />
                   </svg>
                 </button>
-                <button disabled={loader}>
+                <button disabled={loader}  onClick={() => handleStatus(task._id, 1)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -72,7 +74,7 @@ export default function TaskList({ taskList, upDateList }) {
                 </button>
                 <button
                   disabled={loader}
-                  onClick={() => handleDelete(task._id)}
+                  onClick={() => handleStatus(task._id, 0)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
